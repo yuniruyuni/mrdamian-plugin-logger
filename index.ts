@@ -11,7 +11,7 @@ type LoggerConfig = ComponentConfig & {
   };
 };
 
-export class Logger extends Component<LoggerConfig> {
+export default class Logger extends Component<LoggerConfig> {
   public async run(config: LoggerConfig): Promise<Field> {
     const file = config.args.path;
     const dir = path.dirname(file);

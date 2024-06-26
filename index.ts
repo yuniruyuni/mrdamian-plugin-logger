@@ -5,20 +5,20 @@ import type { ComponentConfig } from "mrdamian/model/parameters";
 import type { Field } from "mrdamian/model/variable";
 
 type LoggerConfig = ComponentConfig & {
-  args: {
-    path: string;
-    output: Field;
-  };
+	args: {
+		path: string;
+		output: Field;
+	};
 };
 
 export default class Logger extends Component<LoggerConfig> {
-  public async run(config: LoggerConfig): Promise<Field> {
-    const file = config.args.path;
-    const dir = path.dirname(file);
+	public async process(config: LoggerConfig): Promise<Field> {
+		const file = config.args.path;
+		const dir = path.dirname(file);
 
-    await fs.mkdir(dir, { recursive: true });
-    await fs.appendFile(file, `${JSON.stringify(config.args.output)}\n`);
+		await fs.mkdir(dir, { recursive: true });
+		await fs.appendFile(file, `${JSON.stringify(config.args.output)}\n`);
 
-    return undefined;
-  }
+		return undefined;
+	}
 }

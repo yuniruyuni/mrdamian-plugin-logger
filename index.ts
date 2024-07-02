@@ -1,8 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { Component } from "mrdamian/model/component";
-import type { ComponentConfig } from "mrdamian/model/parameters";
-import type { Field } from "mrdamian/model/variable";
+import { Component, type ComponentConfig, type Field } from "mrdamian-plugin";
 
 type LoggerConfig = ComponentConfig & {
 	args: {

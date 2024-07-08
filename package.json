@@ -1,39 +1,39 @@
 {
-	"name": "mrdamian-plugin-logger",
-	"productName": "mrdamian-plugin-logger",
-	"description": "Mr.Damian plugin for message logging",
-	"homepage": "https://github.com/yuniruyuni/mrdamian-plugin-logger/README.md",
-	"repository": "https://github.com/yuniruyuni/mrdamian-plugin-logger",
-	"bugs": "https://github.com/yuniruyuni/mrdamian-plugin-logger/issues",
-	"version": "0.0.4",
-	"author": {
-		"name": "yuniruyuni",
-		"email": "yuniruyuni@gmail.com"
-	},
-	"files": ["index.ts", "tsconfig.json", "dist"],
-	"keywords": ["mrdamian"],
-	"license": "MIT",
-	"main": "index.ts",
-	"type": "module",
-	"scripts": {
-		"build": "run-s build:backend",
-		"build:backend": "NODE_ENV=production bun build --minify --outdir=dist/ index.ts",
-		"check": "biome check --write",
-		"format": "biome format --write",
-		"lint": "biome lint",
-		"prepublishOnly": "bun run build",
-		"test": "bun test",
-		"type": "tsc --noEmit"
-	},
-	"dependencies": {
-		"mrdamian-plugin": "^0.0.5"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.8.1",
-		"@types/bun": "^1.1.4",
-		"@types/node": "^20.14.4",
-		"bun": "^1.1.13",
-		"npm-run-all2": "^6.2.0",
-		"typescript": "^5.4.5"
-	}
+  "name": "mrdamian-plugin-logger",
+  "productName": "mrdamian-plugin-logger",
+  "description": "Mr.Damian plugin for message logging",
+  "homepage": "https://github.com/yuniruyuni/mrdamian-plugin-logger/README.md",
+  "repository": "https://github.com/yuniruyuni/mrdamian-plugin-logger",
+  "bugs": "https://github.com/yuniruyuni/mrdamian-plugin-logger/issues",
+  "version": "0.0.4",
+  "author": {
+    "name": "yuniruyuni",
+    "email": "yuniruyuni@gmail.com"
+  },
+  "files": ["index.ts", "tsconfig.json", "dist"],
+  "keywords": ["mrdamian"],
+  "license": "MIT",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "run-s build:backend",
+    "build:backend": "NODE_ENV=production bun build --minify --outdir=dist/ index.ts",
+    "check": "biome check --write",
+    "format": "biome format --write",
+    "lint": "biome lint",
+    "prepublishOnly": "bun run build",
+    "test": "bun test",
+    "type": "tsc --noEmit"
+  },
+  "dependencies": {
+    "mrdamian-plugin": "^0.0.9"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/bun": "^1.1.6",
+    "@types/node": "^20.14.10",
+    "bun": "^1.1.18",
+    "npm-run-all2": "^6.2.2",
+    "typescript": "^5.5.3"
+  }
 }

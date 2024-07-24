@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { Component, type ComponentConfig, type Field } from "mrdamian-plugin";
+import type { Component, ComponentConfig, Field } from "mrdamian-plugin";
 
 type LoggerConfig = ComponentConfig & {
 	args: {
@@ -9,7 +9,7 @@ type LoggerConfig = ComponentConfig & {
 	};
 };
 
-export default class Logger extends Component<LoggerConfig> {
+export default class Logger implements Component<LoggerConfig> {
 	public async process(config: LoggerConfig): Promise<Field> {
 		const file = config.args.path;
 		const dir = path.dirname(file);

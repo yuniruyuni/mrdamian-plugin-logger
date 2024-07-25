@@ -1,21 +1,21 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import type { Component, ComponentConfig, Field } from "mrdamian-plugin";
+import type { Action, Component, Field } from "mrdamian-plugin";
 
-type LoggerConfig = ComponentConfig & {
+type LoggerAction = Action & {
 	args: {
 		path: string;
 		output: Field;
 	};
 };
 
-export default class Logger implements Component<LoggerConfig> {
-	public async process(config: LoggerConfig): Promise<Field> {
-		const file = config.args.path;
+export default class Logger implements Component<LoggerAction> {
+	public async process(action: LoggerAction): Promise<Field> {
+		const file = action.args.path;
 		const dir = path.dirname(file);
 
 		await fs.mkdir(dir, { recursive: true });
-		await fs.appendFile(file, `${JSON.stringify(config.args.output)}\n`);
+		await fs.appendFile(file, `${JSON.stringify(action.args.output)}\n`);
 
 		return undefined;
 	}
